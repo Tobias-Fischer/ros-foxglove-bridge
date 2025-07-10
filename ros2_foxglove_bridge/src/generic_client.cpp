@@ -126,7 +126,8 @@ GenericClient::GenericClient(rclcpp::node_interfaces::NodeBaseInterface* nodeBas
 
   // get_typesupport_handle is deprecated since rclcpp 25.0.0
   // (https://github.com/ros2/rclcpp/pull/2209)
-#if RCLCPP_VERSION_GTE(25, 0, 0)
+// Hardcoding this to false as we are in humble, hardcode to true on other distros
+#if false
   _requestTypeSupportHdl =
     rclcpp::get_message_typesupport_handle(requestTypeName, TYPESUPPORT_LIB_NAME, *_typeSupportLib);
   _responseTypeSupportHdl = rclcpp::get_message_typesupport_handle(
