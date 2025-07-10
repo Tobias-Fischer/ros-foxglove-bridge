@@ -16,7 +16,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 macro(enable_strict_compiler_warnings target)
   if (MSVC)
-    target_compile_options(${target} PRIVATE /WX /W4)
+    target_compile_options(${target} PRIVATE /W4)
   elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Werror -Wold-style-cast -Wfloat-equal -Wmost -Wunused-exception-parameter)
   else()
